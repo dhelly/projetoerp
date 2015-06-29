@@ -190,7 +190,10 @@ if (defined('ENVIRONMENT'))
 
 		define('APPPATH', BASEPATH.$application_folder.'/');
 	}
-
+	#### constantes adicionadas para o hooks
+	define('LAYOUTPATH', $application_folder.'/layouts/');
+	define('JSPATH', 'assets/js/');
+	define('CSSPATH','assets/css/');
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE

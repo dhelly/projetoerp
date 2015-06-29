@@ -1,0 +1,121 @@
+/*
+
+/* Configuracoes gerais */
+
+*
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+body 
+{
+	background-color: #FFFFFF;
+}
+
+/* Geral */
+
+#geral
+{
+	width: 900px;
+	height: 500px;
+	padding: 0px 50px;
+	margin: auto;
+	background-color: #FFFFFF;
+}
+
+li
+{
+	list-style: none;
+}
+
+/* Topo */
+
+#topo
+{
+	width: 900px;
+	height: 20px;
+	border-bottom: 20px #0000FF solid;
+}
+
+#topo #menu li
+{
+	list-style: none;
+	height: 50px;
+	margin: 0px 10px 0px 10px;
+	float: left;	
+}
+
+#topo #menu a
+{	
+	color: #000000;
+	font-family: Verdana, Arial, Sans-serif;
+	font-size: 11px;
+	display: block;
+	text-decoration: none;
+}
+
+#topo #menu a:hover
+{
+	color: #999999;
+}
+
+/* Meio */
+
+
+#meio
+{
+	height: 300px
+}
+
+#meio h1
+{
+	font-family: Tahoma;
+	font-size: 20px;	
+}
+
+#meio p
+{
+	font-family: Tahoma;
+	font-size: 12px;
+	line-height: 13px;
+	margin: 10px 0px;
+	text-align: justify;
+}
+
+#meio #menu
+{
+	width: 200px;
+	height: 300px;
+	padding: 10px;
+	border-right: 2px blue solid;
+	float: left;
+}
+
+#meio #conteudo
+{
+	width: 600px;
+	height: 260px;
+	padding: 30px;
+	float: left;
+}
+
+/* Rodape */
+
+#rodape
+{
+	width: 900px;
+	height: 50px;
+	padding: 10px 0px 0px 0px;
+	margin-top: 20px;
+	border-top: 4px #0000FF solid;
+
+}
+
+#rodape .rodape
+{
+	margin: auto;
+	font-size: 11px;
+	color: #999999;
+	text-align: center;
+}

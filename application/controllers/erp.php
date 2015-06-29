@@ -2,9 +2,33 @@
 
 class Erp extends CI_Controller {
 
+	/**
+	* Layout default utilizado pelo controlador.
+	*/
+	public $layout = 'principal';
+	 
+	/**
+	* Titulo default.
+	*/
+	public $title = 'Principal';
+	 
+	/**
+	* Definindo os css default.
+	*/
+	public $css = array('bootstrap-theme.min', 'bootstrap.min');
+	 
+	/**
+	* Carregando os js default.
+	*/
+	public $js = array('jquery.min', 'bootstrap.min');
+
+
 	public function __construct()
 	{
 		parent::__construct();
+		if(!$this->session->userdata('session_id') || !$this->session->userdata('logado')){
+			redirect(site_url('login'));
+		}
 
 		$this->load->database();
 		$this->load->helper('url');
@@ -14,15 +38,16 @@ class Erp extends CI_Controller {
 
 	public function _erp_output($output = null)
 	{
-		$this->load->view('principal.php',$output);
+		$this->load->view('erp.php',$output);
 	}
 
-	// public function filiais()
-	// {
-	// 	$output = $this->grocery_crud->render();
+	public function principal(){
+		$html = $this->load->view('home','',true);
+		$output = (object)array('output' => $html , 'js_files' => array() , 'css_files' => array());
+		
 
-	// 	$this->_erp_output($output);
-	// }
+		$this->_erp_output($output);
+	}
 
 	public function index()
 	{
@@ -36,7 +61,7 @@ class Erp extends CI_Controller {
 
 			// $crud->set_theme('datatables');
 			$crud->set_table('loja');
-			$crud->set_subject('Office');
+			$crud->set_subject('Filiais');
 			$crud->required_fields('nome');
 			$crud->columns('nome','cidade','telefone','logradouro','estado');
 			$crud->display_as('numero_logradouro','Número')
